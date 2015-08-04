@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="description_max_width">400dp</dimen>
+    <dimen name="image_width">400dp</dimen>
+</resources>
