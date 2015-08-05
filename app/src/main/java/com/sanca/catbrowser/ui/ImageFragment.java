@@ -45,6 +45,6 @@ public class ImageFragment extends DialogFragment {
         super.onDestroyView();
         ButterKnife.reset(this);
     }
-    
+
 
 }
