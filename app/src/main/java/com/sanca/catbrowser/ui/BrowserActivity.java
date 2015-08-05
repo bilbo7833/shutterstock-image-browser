@@ -51,7 +51,7 @@ public class BrowserActivity extends AppCompatActivity implements ImageAdapter.I
 
     @Override
     public void onImageClicked(ImageData imageData) {
-        ImageFragment imageFragment = ImageFragment.newInstance(imageData.getPreviewUrl());
+        ImageFragment imageFragment = ImageFragment.newInstance(imageData.getPreviewUrl(), imageData.getDescription());
         FragmentManager fm = getSupportFragmentManager();
         imageFragment.show(fm, "ImageFragment");
 

@@ -8,4 +8,5 @@
     <dimen name="image_width">240dp</dimen>
     <dimen name="padding_description">8dp</dimen>
     <dimen name="margin_image_description">6dp</dimen>
+    <dimen name="full_screen_image_width">320dp</dimen>
 </resources>

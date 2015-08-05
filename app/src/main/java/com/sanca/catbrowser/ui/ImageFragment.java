@@ -8,6 +8,8 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.TextView;
 
 import com.android.volley.toolbox.NetworkImageView;
 import com.sanca.catbrowser.R;
@@ -19,12 +21,14 @@ import butterknife.InjectView;
 public class ImageFragment extends DialogFragment {
 
     @InjectView(R.id.img_view) NetworkImageView mImage;
+    @InjectView(R.id.txt_description) TextView mDescription;
 
 
-    public static ImageFragment newInstance(String url) {
+    public static ImageFragment newInstance(String url, String description) {
         ImageFragment fragment = new ImageFragment();
         Bundle args = new Bundle();
         args.putString("url", url);
+        args.putString("description", description);
         fragment.setArguments(args);
         return fragment;
     }
@@ -36,8 +40,19 @@ public class ImageFragment extends DialogFragment {
         if (getArguments() != null) {
             mImage.setImageUrl(getArguments().getString("url"),
                     VolleySingleton.getInstance().getImageLoader());
+            mDescription.setText(getArguments().getString("description"));
+
         }
         return rootView;
+    }
+
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        Dialog dialog = super.onCreateDialog(savedInstanceState);
+
+        // request a window without the title
+        dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        return dialog;
     }
 
     @Override

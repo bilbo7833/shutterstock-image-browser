@@ -5,11 +5,20 @@
     android:gravity="center"
     tools:context="com.sanca.catbrowser.ui.ImageFragment">
 
+
     <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/img_view"
-        android:layout_width="320dp"
+        android:layout_width="@dimen/full_screen_image_width"
         android:layout_height="wrap_content"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"/>
+
+    <TextView
+        android:id="@+id/txt_description"
+        style="@style/FullScreenText"
+        android:layout_width="@dimen/full_screen_image_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_image_description"
+        android:maxWidth="@dimen/description_max_width" />
 
 </LinearLayout>
